@@ -3,7 +3,7 @@
 
 Web interactiva de reserva de boletos para cine, desarrollada con React.js y Vite. Esta aplicación permite a los usuarios explorar una variedad de películas, seleccionar funciones según horarios y formatos disponibles, y realizar reservas de asientos de manera sencilla y segura.
 
-###Indice
+##Indice
 - [Referencia de colores](#referencia-de-colores)
 - [tecnologias utilizadas](#tecnoligias-utilizadas)
 
