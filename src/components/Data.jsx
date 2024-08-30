@@ -16,14 +16,14 @@ export const SwiperSliderData = [
 ];
 
 export const promociones = [
-  { id: 1, imagen: '/favicon.png', titulo: 'General', entradas: 1, cantidad: 1, descripcion: 'Válido por 1 entrada a precio general.', precio: 8900 },
+  { id: 1, imagen: '/assets/favicon.png', titulo: 'General', entradas: 1, cantidad: 1, descripcion: 'Válido por 1 entrada a precio general.', precio: 8900 },
   { id: 2, imagen: '/assets/amex.png', titulo: 'Entradas 50% OFF', entradas: 1, cantidad: 1, descripcion: 'Válido para tarjetas AMEX emitidas por American Express S.A.', precio: 4450 },
   { id: 3, imagen: '/assets/365.png', titulo: 'Promociones 2x1', entradas: 2, cantidad: 1, descripcion: '2x1 Salas 2D, 3D, XD y Comfort - Válido de Lunes a Domingo con tarjeta Clarin 365.', precio: 8900 },
   { id: 4, imagen: '/assets/bbva.jpg', titulo: 'Promociones 2x1 y 20% off en productos del Candy', entradas: 2, cantidad: 1, descripcion: '2x1 Salas Comfort y 4D - Válido de Lunes a Sábados con tarjetas BBVA débito y crédito.', precio: 8900, candyOff: 0.20 },
-  { id: 5, imagen: '/favicon.png', titulo: 'Family Pack', entradas: 4, cantidad: 1, descripcion: '4 entradas a precio especial y 25% OFF en el combo familiar de pochoclos.', precio: 16000, candyOff: 0.25 },
-  { id: 7, imagen: '/favicon.png', titulo: 'Super Combo 3D', entradas: 3, cantidad: 1, descripcion: '3 entradas para cualquier película en 3D + 20% OFF en el Candy', precio: 13350, candyOff: 0.20 },
-  { id: 8, imagen: '/favicon.png', titulo: 'Entrada y Snacks', entradas: 1, cantidad: 1, descripcion: '1 entrada + 10% OFF en cualquier producto del Candy.', precio: 8900, candyOff: 0.10 },
-  { id: 9, imagen: '/favicon.png', titulo: 'Día del Espectador', entradas: 1, cantidad: 1, descripcion: 'Precio especial los días miércoles. No incluye Candybar.', precio: 3500 },
+  { id: 5, imagen: '/assets/favicon.png', titulo: 'Family Pack', entradas: 4, cantidad: 1, descripcion: '4 entradas a precio especial y 25% OFF en el combo familiar de pochoclos.', precio: 16000, candyOff: 0.25 },
+  { id: 7, imagen: '/assets/favicon.png', titulo: 'Super Combo 3D', entradas: 3, cantidad: 1, descripcion: '3 entradas para cualquier película en 3D + 20% OFF en el Candy', precio: 13350, candyOff: 0.20 },
+  { id: 8, imagen: '/assets/favicon.png', titulo: 'Entrada y Snacks', entradas: 1, cantidad: 1, descripcion: '1 entrada + 10% OFF en cualquier producto del Candy.', precio: 8900, candyOff: 0.10 },
+  { id: 9, imagen: '/assets/favicon.png', titulo: 'Día del Espectador', entradas: 1, cantidad: 1, descripcion: 'Precio especial los días miércoles. No incluye Candybar.', precio: 3500 },
 ];
 
 export const candyOptions = [
