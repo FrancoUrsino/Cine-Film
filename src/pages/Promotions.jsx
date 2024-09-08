@@ -1,5 +1,5 @@
 import React from 'react';
-import { promociones } from '../components/Data'; // Asegúrate de que la ruta sea correcta
+import { promociones } from '../components/Data';
 
 function Promotions() {
   return (

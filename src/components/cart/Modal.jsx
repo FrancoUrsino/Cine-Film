@@ -1,14 +1,16 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 function Modal({ show, onClose, selectedCinema, selectedDay, selectedTime, selectedType, selectedLanguage, movieTitle, movieImage }) {
   const navigate = useNavigate();
+  const {id} = useParams();
+
   if (!show) {
     return null;
   }
 
   const handleContinue = () => {
-    navigate('/promociones', {
+    navigate(`/${id}/promociones`, {
       state: {
         pelicula: { titulo: movieTitle, imagen: movieImage },
         cine: selectedCinema?.label,

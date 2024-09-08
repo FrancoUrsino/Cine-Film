@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, useParams } from 'react-router-dom';
 import { collection, getDocs, runTransaction, doc } from 'firebase/firestore';
 import { firestore } from '../DB/Firebase';
 
@@ -18,6 +18,7 @@ const inicializarAsientos = (asientosReservados) => {
 function Sits() {
   const navigate = useNavigate();
   const location = useLocation();
+  const {id} = useParams();
   const [asientosReservados, setAsientosReservados] = useState([]);
   const [asientos, setAsientos] = useState([]);
   const [asientosSeleccionados, setAsientosSeleccionados] = useState([]);
@@ -78,8 +79,9 @@ function Sits() {
         });
       });
 
+
       const { pelicula, promocionesSeleccionadas, precio } = location.state;
-      navigate('/candybar', {
+      navigate(`/${id}/candybar`, {
         state: {
           pelicula: { titulo: pelicula.titulo, imagen: pelicula.imagen },
           cine,

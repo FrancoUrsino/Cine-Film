@@ -19,11 +19,13 @@ function App() {
     <Routes>
       <Route path='/' element={ <Home />} />
       <Route path='/:id' element={<ItemDetails />} />
-      <Route path='/promociones' element={ <Cart />} />
+      <Route path='/:id/promociones' element={ <Cart />} />
       <Route path='/inicio-de-sesion' element={ <UserSesion />} />
       <Route path='/perfil' element={ <UserProfile />} />
-      <Route path='/seleccionar-asientos' element={ <Sits />} />
-      <Route path='/candybar' element={ <Candy />} />
+      <Route path='/:id/seleccionar-asientos' element={ <Sits />} />
+      <Route path="/:id/candybar" element={<Candy />} />
+      <Route path="/candybar" element={<Candy />} />
+      <Route path='/:id/confirmar-compra' element={ <Confirm />} />
       <Route path='/confirmar-compra' element={ <Confirm />} />
       <Route path="/info-promociones" element={<Promotions />} />
       <Route path="/cines-precios" element={<Cines />} />

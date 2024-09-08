@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, useParams } from 'react-router-dom';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth, firestore } from '../components/DB/Firebase';
 import { doc, getDoc } from 'firebase/firestore';
@@ -10,6 +10,7 @@ import { promociones } from '../components/Data';
 function Cart() {
   const navigate = useNavigate();
   const location = useLocation();
+  const {id} = useParams();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userName, setUserName] = useState('');
   const [pelicula, setPelicula] = useState({ imagen: '', titulo: '' });
@@ -97,9 +98,10 @@ function Cart() {
     navigate(-1);
   };
 
+
   const handleNext = () => {
     if (isLoggedIn) {
-      navigate('/seleccionar-asientos', {
+      navigate(`/${id}/seleccionar-asientos`, {
         state: {
           pelicula,
           cine,
