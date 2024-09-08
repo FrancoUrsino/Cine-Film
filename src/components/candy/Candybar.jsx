@@ -4,6 +4,7 @@ import Swal from 'sweetalert2';
 import SwiperComponent from '../SwiperCandy';
 import { candyOptions, otherOptions, gummyOptions, toysOptions } from '../Data';
 import CandyModal from './CandyModal';
+import { auth } from '../DB/Firebase'; // Importa la autenticación de Firebase
 
 function Candybar() {
   const [selectedCandies, setSelectedCandies] = useState([]);
@@ -46,14 +47,19 @@ function Candybar() {
     setSelectedCandies((prev) => prev.filter((c) => c.id !== candyId));
   };
 
-
   const handleFinalizePurchase = () => {
-    if (selectedCandies.length > 0) {
+    // Verifica si hay un usuario autenticado
+    const currentUser = auth.currentUser;
+    if (currentUser) {
+      // Usuario autenticado, redirige a confirmar compra
       navigate(`/confirmar-compra`, {
         state: {
           selectedCandies,
         },
       });
+    } else {
+      // Usuario no autenticado, redirige a inicio de sesión
+      navigate('/inicio-de-sesion');
     }
   };
 
@@ -69,19 +75,24 @@ function Candybar() {
 
       <div className="mt-8">
         <h2 className="text-xl font-semibold mb-4">Seleccionados</h2>
-        <button className="bg-primary-color text-black px-4 py-2 rounded-lg mt-4" onClick={() => setShowModal(true)} >Ver Selección</button>
-        <button className={`bg-third-color text-black px-4 py-2 rounded-lg mt-4 ml-4 ${selectedCandies.length === 0 ? 'opacity-50 cursor-not-allowed' : ''}`} onClick={handleFinalizePurchase} disabled={selectedCandies.length === 0}>Finalizar Compra</button>
+        <button className="bg-primary-color text-black px-4 py-2 rounded-lg mt-4" onClick={() => setShowModal(true)}>Ver Selección</button>
+        <button 
+          className={`bg-third-color text-black px-4 py-2 rounded-lg mt-4 ml-4 ${selectedCandies.length === 0 ? 'opacity-50 cursor-not-allowed' : ''}`} 
+          onClick={handleFinalizePurchase} 
+          disabled={selectedCandies.length === 0}
+        >
+          Finalizar Compra
+        </button>
       </div>
 
       {showModal && (
         <CandyModal
-        selectedCandies={selectedCandies}
-        onClose={() => setShowModal(false)}
-        onRemoveCandy={handleRemoveCandy}
-        onAddCandy={handleAddCandy}
-        onSubtractCandy={handleSubtractCandy}
-      />
-      
+          selectedCandies={selectedCandies}
+          onClose={() => setShowModal(false)}
+          onRemoveCandy={handleRemoveCandy}
+          onAddCandy={handleAddCandy}
+          onSubtractCandy={handleSubtractCandy}
+        />
       )}
     </div>
   );
