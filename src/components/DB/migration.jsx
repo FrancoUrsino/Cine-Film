@@ -1,4 +1,3 @@
-// Para que funcione la migración de datos simplemente ejecutá este componente hermoso en algún lado de la aplicación y lissto
 import {addDoc, collection } from 'firebase/firestore'
 import { firestore } from './Firebase';
 import data from './data.json'

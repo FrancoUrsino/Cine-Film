@@ -4,7 +4,7 @@ import Swal from 'sweetalert2';
 import SwiperComponent from '../SwiperCandy';
 import { candyOptions, otherOptions, gummyOptions, toysOptions } from '../Data';
 import CandyModal from './CandyModal';
-import { auth } from '../DB/Firebase'; // Importa la autenticación de Firebase
+import { auth } from '../DB/Firebase';
 
 function Candybar() {
   const [selectedCandies, setSelectedCandies] = useState([]);
@@ -48,17 +48,14 @@ function Candybar() {
   };
 
   const handleFinalizePurchase = () => {
-    // Verifica si hay un usuario autenticado
     const currentUser = auth.currentUser;
     if (currentUser) {
-      // Usuario autenticado, redirige a confirmar compra
       navigate(`/confirmar-compra`, {
         state: {
           selectedCandies,
         },
       });
     } else {
-      // Usuario no autenticado, redirige a inicio de sesión
       navigate('/inicio-de-sesion');
     }
   };
